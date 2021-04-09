@@ -15,3 +15,9 @@ def test_airport_land():
     airport = Airport()
     airport.land("plane")
     assert airport.hangar == ["plane"]
+
+def test_airport_take_off():
+    airport = Airport()
+    airport.land("plane")
+    airport.take_off("plane")
+    assert airport.hangar == []
