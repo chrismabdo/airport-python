@@ -21,3 +21,10 @@ def test_airport_take_off():
     airport.land("plane")
     airport.take_off("plane")
     assert airport.hangar == []
+
+def test_airport_capacity():
+    airport = Airport()
+    airport.land("plane")
+    airport.land("plane")
+    airport.land("plane")
+    assert airport.land("plane") == "Hangar Capacity Reached!"
