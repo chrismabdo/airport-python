@@ -10,3 +10,8 @@ def test_add():
 def test_airport_has_hangar():
     airport = Airport()
     assert airport.hangar == []
+
+def test_airport_land():
+    airport = Airport()
+    airport.land("plane")
+    assert airport.hangar == ["plane"]
