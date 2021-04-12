@@ -28,3 +28,9 @@ def test_airport_capacity():
     airport.land("plane")
     airport.land("plane")
     assert airport.land("plane") == "Hangar Capacity Reached!"
+
+def test_set_capacity():
+    airport = Airport(1)
+    airport.land("plane")
+    assert airport.land("plane") == "Hangar Capacity Reached!"
+
