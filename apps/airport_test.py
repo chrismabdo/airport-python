@@ -34,3 +34,7 @@ def test_set_capacity():
     airport.land("plane")
     assert airport.land("plane") == "Hangar Capacity Reached!"
 
+def test_weather():
+    airport = Airport()
+    airport.land("plane")
+    assert airport.take_off("plane") == "Weather Troubles! No take offs permitted!"
