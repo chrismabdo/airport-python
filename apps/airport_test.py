@@ -1,5 +1,7 @@
+from doubles import allow
 import pytest
 from airport import Airport
+
 NUMBER_1 = 3
 NUMBER_2 = 2
 
@@ -19,6 +21,7 @@ def test_airport_land():
 def test_airport_take_off():
     airport = Airport()
     airport.land("plane")
+    allow(airport).weather.and_return('sunny')
     airport.take_off("plane")
     assert airport.hangar == []
 
@@ -37,4 +40,5 @@ def test_set_capacity():
 def test_weather():
     airport = Airport()
     airport.land("plane")
+    allow(airport).weather.and_return('stormy')
     assert airport.take_off("plane") == "Weather Troubles! No take offs permitted!"
