@@ -7,7 +7,7 @@ class Airport:
         self.hangar = []
 
     def land(self, plane):
-        if len(self.hangar) == self.capacity:
+        if self.full_capacity() == True:
           return "Hangar Capacity Reached!"
         else:
           self.hangar.append(plane)
@@ -22,4 +22,8 @@ class Airport:
         conditions = ["sunny", "overcast", "stormy"]
         return random.choice(conditions)
         
-    # def full_capacity(self, plane)
+    def full_capacity(self):
+        if len(self.hangar) == self.capacity:
+            return True
+        else:
+            return False
